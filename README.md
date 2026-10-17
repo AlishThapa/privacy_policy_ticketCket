@@ -144,7 +144,11 @@ notify you and the relevant authorities as required by applicable law.
 - **Account and scan records** are retained by your event organiser for as long as
   needed for event operations, auditing, and dispute resolution, and then deleted or
   anonymised according to their retention schedule.
-- **Server logs** are kept for a limited period for security and troubleshooting.
+- **Server logs** are kept for **up to 90 days** for security and troubleshooting, then
+  deleted.
+- **A deleted account** is removed within **30 days** of a verified deletion request. Your
+  scan records are anonymised rather than deleted, so the organiser's event audit trail
+  stays intact without being linked to you.
 
 ---
 
@@ -159,7 +163,11 @@ Depending on where you live, you may have the right to:
 - receive a copy of your data in a portable format;
 - withdraw consent to device permissions (via your device settings).
 
-To exercise any of these, contact us using the details in section 12. Because much of
+To request **deletion of your account**, use our
+[account deletion page](https://alishthapa.github.io/privacy_policy_ticketCket/delete-account.html),
+which sets out exactly what is deleted, anonymised, and retained.
+
+To exercise any other right, contact us using the details in section 13. Because much of
 the data is held on behalf of an event organiser, we may need to direct your request to
 that organiser, and we will tell you if so. We respond within the period required by
 applicable law.
@@ -206,7 +214,7 @@ App after an update means you accept the revised policy.
 Questions, requests, or complaints about this policy or your data:
 
 **TicketCket**
-Email: support@ticketcket.com
+Email: asim@yticketcket.com
 Website: https://ticketcket.com
 
 If you are not satisfied with our response, you may lodge a complaint with your local
