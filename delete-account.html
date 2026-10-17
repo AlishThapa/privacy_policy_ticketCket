@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delete Your TicketCket Account</title>
+<meta name="description" content="Request deletion of your TicketCket account and associated data.">
+<style>
+  :root {
+    --primary: #24C461;
+    --primary-dark: #1B9D4D;
+    --bg: #F9FAFB;
+    --surface: #FFFFFF;
+    --elevated: #F3F4F6;
+    --text: #111827;
+    --muted: #6B7280;
+    --border: #E5E7EB;
+    --danger: #DC2626;
+    --danger-bg: #FEF2F2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0B0F14;
+      --surface: #151B23;
+      --elevated: #1E2630;
+      --text: #F3F4F6;
+      --muted: #9BA3AF;
+      --border: #2A3340;
+      --danger: #F87171;
+      --danger-bg: #2A1517;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0B0F14;
+    --surface: #151B23;
+    --elevated: #1E2630;
+    --text: #F3F4F6;
+    --muted: #9BA3AF;
+    --border: #2A3340;
+    --danger: #F87171;
+    --danger-bg: #2A1517;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 48px 16px 80px; }
+  header { margin-bottom: 36px; }
+  .badge {
+    display: inline-block; padding: 5px 11px; border-radius: 999px;
+    background: var(--primary); color: #fff;
+    font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+  }
+  h1 { font-size: clamp(26px, 5vw, 34px); line-height: 1.2; margin: 18px 0 10px; letter-spacing: -.02em; }
+  .lede { color: var(--muted); margin: 0; font-size: 17px; }
+  section {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 24px; margin-bottom: 20px;
+  }
+  h2 { font-size: 19px; margin: 0 0 14px; letter-spacing: -.01em; }
+  h2 .num {
+    display: inline-grid; place-items: center; width: 24px; height: 24px;
+    margin-right: 9px; border-radius: 7px;
+    background: var(--elevated); color: var(--primary);
+    font-size: 13px; font-weight: 700; vertical-align: 2px;
+  }
+  p { margin: 0 0 12px; }
+  p:last-child, ul:last-child { margin-bottom: 0; }
+  ul { margin: 0 0 12px; padding-left: 22px; }
+  li { margin-bottom: 7px; }
+  li:last-child { margin-bottom: 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { text-align: left; padding: 11px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 700; }
+  tr:last-child td { border-bottom: none; }
+  .label { display: block; font-weight: 600; font-size: 14px; margin: 18px 0 7px; }
+  .label:first-of-type { margin-top: 0; }
+  .req { color: var(--danger); }
+  input[type=text], input[type=email], textarea, select {
+    width: 100%; padding: 11px 13px;
+    background: var(--bg); color: var(--text);
+    border: 1px solid var(--border); border-radius: 9px;
+    font: inherit; font-size: 15px;
+  }
+  textarea { min-height: 92px; resize: vertical; }
+  input:focus, textarea:focus, select:focus {
+    outline: none; border-color: var(--primary);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 22%, transparent);
+  }
+  .hint { font-size: 13px; color: var(--muted); margin: 6px 0 0; }
+  .check {
+    display: flex; gap: 11px; align-items: flex-start;
+    margin-top: 20px; padding: 14px;
+    background: var(--danger-bg); border: 1px solid color-mix(in srgb, var(--danger) 30%, transparent);
+    border-radius: 10px;
+  }
+  .check input { margin: 3px 0 0; width: 17px; height: 17px; flex: none; accent-color: var(--danger); }
+  .check label { font-size: 14px; }
+  button {
+    width: 100%; margin-top: 20px; padding: 14px 20px;
+    background: var(--primary); color: #fff;
+    border: none; border-radius: 10px;
+    font: inherit; font-size: 16px; font-weight: 700;
+    cursor: pointer; transition: background .15s;
+  }
+  button:hover { background: var(--primary-dark); }
+  button:disabled { opacity: .45; cursor: not-allowed; background: var(--muted); }
+  .sent {
+    display: none; margin-top: 18px; padding: 14px;
+    background: var(--elevated); border-left: 3px solid var(--primary); border-radius: 8px;
+    font-size: 14px;
+  }
+  .sent.show { display: block; }
+  a { color: var(--primary); }
+  footer { margin-top: 32px; font-size: 14px; color: var(--muted); text-align: center; }
+  code {
+    background: var(--elevated); padding: 2px 6px; border-radius: 5px;
+    font-size: 13px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="badge">TicketCket</span>
+    <h1>Delete your account and data</h1>
+    <p class="lede">Use this page to request permanent deletion of your TicketCket
+    account and the personal data associated with it.</p>
+  </header>
+
+  <section>
+    <h2><span class="num">1</span>Before you start</h2>
+    <p>TicketCket accounts are <strong>issued by the event organiser you work for</strong>.
+    Deleting your account removes your access to every event assigned to you, and it
+    cannot be undone. If you only want to stop using the app on one device, signing out
+    is enough — that clears all stored data from that device.</p>
+    <p>We confirm every request from the account's registered email address before
+    acting on it.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>What is deleted, and what is kept</h2>
+    <table>
+      <thead>
+        <tr><th>Data</th><th>Outcome</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Your account and login credentials</td>
+          <td><strong>Deleted</strong> within 30 days of a verified request</td>
+        </tr>
+        <tr>
+          <td>Your profile details (name, email, role)</td>
+          <td><strong>Deleted</strong> within 30 days</td>
+        </tr>
+        <tr>
+          <td>Session and refresh tokens</td>
+          <td><strong>Revoked immediately</strong>; device copies cleared on sign-out or uninstall</td>
+        </tr>
+        <tr>
+          <td>Your app preferences and cached images</td>
+          <td><strong>Deleted</strong> from the device on uninstall</td>
+        </tr>
+        <tr>
+          <td>Scan and validation records tied to your account</td>
+          <td><strong>Anonymised</strong> — the ticket/order record remains for the
+          organiser's event audit trail, but is no longer linked to you</td>
+        </tr>
+        <tr>
+          <td>Attendee and order data belonging to the organiser</td>
+          <td><strong>Retained by the organiser</strong> — it is their data, not yours,
+          and we hold it on their behalf</td>
+        </tr>
+        <tr>
+          <td>Security and transaction logs</td>
+          <td><strong>Retained up to 90 days</strong> for fraud prevention and security,
+          then deleted</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>Request deletion</h2>
+    <p>Fill this in and press the button. Your email app will open with the request
+    ready to send — <strong>you still need to press send</strong>, which is how we verify
+    the request came from you.</p>
+
+    <form id="f">
+      <span class="label">Full name <span class="req">*</span></span>
+      <input type="text" id="name" required autocomplete="name">
+
+      <span class="label">Account email address <span class="req">*</span></span>
+      <input type="email" id="email" required autocomplete="email">
+      <p class="hint">Must be the email you use to sign in to TicketCket.</p>
+
+      <span class="label">Event organiser / company</span>
+      <input type="text" id="org">
+      <p class="hint">Optional, but it helps us locate your account faster.</p>
+
+      <span class="label">What should we delete? <span class="req">*</span></span>
+      <select id="scope">
+        <option value="My entire account and all associated personal data">My entire account and all associated personal data</option>
+        <option value="My personal data only — keep my account active">My personal data only — keep my account active</option>
+      </select>
+
+      <span class="label">Anything else we should know?</span>
+      <textarea id="note" placeholder="Optional"></textarea>
+
+      <div class="check">
+        <input type="checkbox" id="ack" required>
+        <label for="ack">I understand that deleting my account is <strong>permanent and
+        cannot be reversed</strong>, and that I will lose access to all events assigned
+        to me.</label>
+      </div>
+
+      <button type="submit" id="go">Open deletion request email</button>
+    </form>
+
+    <div class="sent" id="sent">
+      Your email app should now be open with the request filled in. Press
+      <strong>send</strong> to submit it. If nothing opened, email us directly at
+      <a href="mailto:support@ticketcket.com">support@ticketcket.com</a> with the
+      subject <code>Account deletion request</code>.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>What happens next</h2>
+    <ul>
+      <li>We acknowledge your request within <strong>5 business days</strong>.</li>
+      <li>We verify it came from the account's registered email address.</li>
+      <li>If your organiser must approve the removal of a staff account, we tell you and
+      coordinate it.</li>
+      <li>Deletion completes within <strong>30 days</strong> of verification, and we
+      email you to confirm.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Questions: <a href="mailto:support@ticketcket.com">support@ticketcket.com</a>
+    &middot; <a href="https://github.com/AlishThapa/privacy_policy_ticketCket">Privacy Policy</a></p>
+    <p>Last updated 17 October 2026</p>
+  </footer>
+
+</div>
+
+<script>
+  var f = document.getElementById('f');
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = function (id) { return document.getElementById(id).value.trim(); };
+    var body = [
+      'I request the deletion of my TicketCket account and associated personal data.',
+      '',
+      'Full name: ' + v('name'),
+      'Account email: ' + v('email'),
+      'Event organiser / company: ' + (v('org') || 'Not provided'),
+      'Scope of request: ' + v('scope'),
+      '',
+      'Additional notes:',
+      (v('note') || 'None'),
+      '',
+      'I confirm I understand this action is permanent and irreversible.',
+      '',
+      'Submitted from the TicketCket account deletion page.'
+    ].join('\n');
+
+    window.location.href = 'mailto:support@ticketcket.com'
+      + '?subject=' + encodeURIComponent('Account deletion request - ' + v('email'))
+      + '&body=' + encodeURIComponent(body);
+
+    document.getElementById('sent').classList.add('show');
+  });
+</script>
+</body>
+</html>
